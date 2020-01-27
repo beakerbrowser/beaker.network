@@ -60,9 +60,9 @@ export class Post extends LitElement {
 
   getDriveTypeIcon (dt) {
     switch (dt) {
-      case 'unwalled.garden/person': return 'fas fa-user'
-      case 'unwalled.garden/module': return 'fas fa-cube'
-      case 'unwalled.garden/template': return 'fas fa-drafting-compass'
+      case 'user': return 'fas fa-user'
+      case 'module': return 'fas fa-cube'
+      case 'theme': return 'fas fa-drafting-compass'
       case 'webterm.sh/cmd-pkg': return 'fas fa-terminal'
       default: return 'far fa-hdd'
     }

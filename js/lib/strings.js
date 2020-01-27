@@ -1,8 +1,5 @@
 export const DAT_KEY_REGEX = /[0-9a-f]{64}/i
 export const KNOWN_DRIVE_TYPES = {
-  'unwalled.garden/person': 'user',
-  'unwalled.garden/module': 'module',
-  'unwalled.garden/template': 'template',
   'webterm.sh/cmd-pkg': 'webterm command'
 }
 

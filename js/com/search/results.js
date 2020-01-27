@@ -34,7 +34,7 @@ export class SearchResults extends LitElement {
 
   async load () {
     var results = await this.runPostsQuery()
-    if (this.driveType === 'unwalled.garden/person' && results.length < PAGE_SIZE) {
+    if (this.driveType === 'user' && results.length < PAGE_SIZE) {
       results = results.concat(await this.runFollowsQuery(results.length))
     }
     /* dont await */ this.loadFeedAnnotations(results)
@@ -124,7 +124,7 @@ export class SearchResults extends LitElement {
               user-url="${this.user.url}"
             ></beaker-post>
           ` : '')}
-          ${this.driveType === 'unwalled.garden/person' ? html`
+          ${this.driveType === 'user' ? html`
             <beaker-profile-list loadable .user=${this.user} .profiles=${this.results.filter(isNotPost)}></beaker-profile-list>
           ` : ''}
           ${this.results.length === 0

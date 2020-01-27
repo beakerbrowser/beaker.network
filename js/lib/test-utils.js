@@ -18,7 +18,7 @@ export async function generateDrives (num = 10) {
 
   for (let i = 0; i < num; i++) {
     let profile = FAKE_PROFILES[(i + debugDrives.length) % FAKE_PROFILES.length]
-    let drive = await Hyperdrive.create(Object.assign(profile, {type: 'unwalled.garden/person', prompt: false}))
+    let drive = await Hyperdrive.create(Object.assign(profile, {type: 'user', prompt: false}))
     debugDrives.push(drive.url)
     await uwg.follows.add(drive.url, profile.title)
   }

@@ -38,9 +38,9 @@ export class SearchInput extends LitElement {
     const url = (driveType) => `/search?drive-type=${encodeURIComponent(driveType)}&query=${encodeURIComponent(this.query)}`
     this.results = [
       {title: title('posts'), url: url('')},
-      {title: title('users'), url: url('unwalled.garden/person')},
-      {title: title('templates'), url: url('unwalled.garden/template')},
-      {title: title('modules'), url: url('unwalled.garden/module')},
+      {title: title('users'), url: url('user')},
+      {title: title('themes'), url: url('theme')},
+      {title: title('modules'), url: url('module')},
       {title: title('webterm commands'), url: url('webterm.sh/cmd-pkg')}
     ]
   }
