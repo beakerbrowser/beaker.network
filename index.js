@@ -22,11 +22,11 @@ const ROUTES = {
   'comments': /^\/comments$/i,
   'notifications': /^\/notifications$/i,
   'search': /^\/search$/i,
-  'userProfile': /^\/(?<id>[^\/]+)$/i,
-  'userPosts': /^\/(?<id>[^\/]+)\/posts$/i,
-  'userComments': /^\/(?<id>[^\/]+)\/comments$/i,
-  'userFollowers': /^\/(?<id>[^\/]+)\/followers$/i,
-  'userFollowing': /^\/(?<id>[^\/]+)\/following$/i,
+  'userProfile': /^\/(?<id>[^\/]+)\/?$/i,
+  'userPosts': /^\/(?<id>[^\/]+)\/posts\/?$/i,
+  'userComments': /^\/(?<id>[^\/]+)\/comments\/?$/i,
+  'userFollowers': /^\/(?<id>[^\/]+)\/followers\/?$/i,
+  'userFollowing': /^\/(?<id>[^\/]+)\/following\/?$/i,
   'post': /^\/(?<id>[^\/]+)\/posts\/(?<topic>[^\/]+)\/(?<filename>[^\/]+)$/i,
   'comment': /^\/(?<id>[^\/]+)\/comments\/(?<filename>[^\/]+)$/i
 }
