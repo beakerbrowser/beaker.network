@@ -25,8 +25,11 @@ export async function generateDrives (num = 10) {
 }
 
 export async function socializeDrives () {
+  var user = `hd://${(await navigator.filesystem.stat('/profile')).mount.key}`
   var driveUrls = Array.from(debugDrives)
+  driveUrls.push(user)
   for (let driveUrl of driveUrls) {
+    if (driveUrl === user) continue
     let drive = new Hyperdrive(driveUrl)
     var numFollows = Math.floor(Math.random() * driveUrls.length)
     console.log('Adding', numFollows, 'follows for', driveUrl)

@@ -200,6 +200,7 @@ export async function updateIndex (userUrl) {
       ]
     })
     var userKeySet = new Set(followedUsers.map(f => f.mount))
+    userKeySet.delete(userUrl)
 
     for (let userKey of userKeySet) {
       let drive = new Hyperdrive(userKey)
