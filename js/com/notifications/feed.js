@@ -71,10 +71,10 @@ export class NotificationsFeed extends LitElement {
   getHref (notification) {
     if (notification.event === 'comment' || notification.event === 'vote') {
       if (notification.detail.href.includes('/comments/')) {
-        return `/${notification.detail.href.slice('hd://'.length)}`
+        return `/${notification.detail.href.slice('hyper://'.length)}`
       }
       if (notification.detail.href.includes('/posts/')) {
-        return `/${notification.detail.href.slice('hd://'.length)}`
+        return `/${notification.detail.href.slice('hyper://'.length)}`
       }
     }
   }

@@ -132,7 +132,7 @@ export class PostView extends LitElement {
       let profile = voters[i]
       let comma = (i !== voters.length - 1) ? ', ' : ''
       els.push(html`
-        <a href=${'/' + profile.url.slice('hd://'.length)} title=${profile.title}>${profile.title}</a>${comma}
+        <a href=${'/' + profile.url.slice('hyper://'.length)} title=${profile.title}>${profile.title}</a>${comma}
       `)
     }
     return els

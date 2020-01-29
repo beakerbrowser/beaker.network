@@ -8,7 +8,7 @@ export function init () {
 }
 
 export function listDrives () {
-  return Array.from(debugDrives, url => `/${url.slice('hd://'.length)}`)
+  return Array.from(debugDrives, url => `/${url.slice('hyper://'.length)}`)
 }
 
 export async function generateDrives (num = 10) {
@@ -25,7 +25,7 @@ export async function generateDrives (num = 10) {
 }
 
 export async function socializeDrives () {
-  var user = `hd://${(await navigator.filesystem.stat('/profile')).mount.key}`
+  var user = `hyper://${(await navigator.filesystem.stat('/profile')).mount.key}`
   var driveUrls = Array.from(debugDrives)
   driveUrls.push(user)
   for (let driveUrl of driveUrls) {

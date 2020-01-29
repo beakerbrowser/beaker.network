@@ -35,7 +35,7 @@ export class ProfileHeader extends LitElement {
 
   render () {
     if (!this.profile) return html`<span class="spinner"></span>`
-    var id = this.profile.url.slice('hd://'.length)
+    var id = this.profile.url.slice('hyper://'.length)
     return html`
       <link rel="stylesheet" href="/webfonts/fontawesome.css">
       <a class="avatar" href="/${id}">

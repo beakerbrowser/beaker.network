@@ -55,7 +55,7 @@ export class ProfileList extends LitElement {
   }
    
   renderProfile (profile) {
-    var id = profile.url.slice('hd://'.length)
+    var id = profile.url.slice('hyper://'.length)
     return html`
       <div class="profile">
         <a class="avatar" href="/${id}">
