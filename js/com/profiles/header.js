@@ -1,6 +1,6 @@
 import { LitElement, html } from '../../../vendor/lit-element/lit-element.js'
 import * as uwg from '../../lib/uwg.js'
-import { pluralize } from '../../lib/strings.js'
+import { toNiceUrl } from '../../lib/strings.js'
 import * as toast from '../toast.js'
 import { EditProfilePopup } from '../popups/edit-profile.js'
 import headerCSS from '../../../css/com/profiles/header.css.js'
@@ -47,7 +47,7 @@ export class ProfileHeader extends LitElement {
       <div class="main">
         <h1 class="title"><a href="/${id}">${this.profile.title}</a></h1>
         <p class="info">
-          <a class="id" href=${this.profile.url}>pfrazee.com</a>
+          <a class="id" href=${this.profile.url}>${toNiceUrl(this.profile.url)}</a>
         </p>
         <p class="info">
           <span class="description">${this.profile.description}</span>

@@ -1,6 +1,7 @@
 import { LitElement, html } from '../../../vendor/lit-element/lit-element.js'
 import { repeat } from '../../../vendor/lit-element/lit-html/directives/repeat.js'
 import * as uwg from '../../lib/uwg.js'
+import { toNiceUrl } from '../../lib/strings.js'
 import * as toast from '../toast.js'
 import listCSS from '../../../css/com/profiles/list.css.js'
 import '../img-fallbacks.js'
@@ -69,7 +70,7 @@ export class ProfileList extends LitElement {
             ${profile.isFollowingUser ? html`<small>follows you</small>` : ''}
           </h1>
           <p class="info">
-            <a class="id" href=${profile.url}>${id}</a>
+            <a class="id" href=${profile.url}>${toNiceUrl(profile.url)}</a>
           </p>
           <p class="info">
             <span class="description">${profile.description}</span>

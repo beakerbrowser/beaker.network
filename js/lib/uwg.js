@@ -1,4 +1,4 @@
-import { normalizeUrl, normalizeTopic, isValidTopic, DAT_KEY_REGEX, joinPath } from './strings.js'
+import { normalizeUrl, normalizeTopic, isValidTopic, DRIVE_KEY_REGEX, joinPath } from './strings.js'
 import { queryRead, ensureDir, ensureParentDir, ensureMount, ensureUnmount, getAvailableName } from './fs.js'
 import { lock } from './lock.js'
 import { DEFAULT_TOPICS } from './const.js'
@@ -49,7 +49,7 @@ export const profiles = {
    * @returns {Promise<SocialProfile>}
    */
   async get (key) {
-    var match = DAT_KEY_REGEX.exec(key)
+    var match = DRIVE_KEY_REGEX.exec(key)
     if (match) key = match[0]
     else key = await Hyperdrive.resolveName(key)
 
