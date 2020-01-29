@@ -66,15 +66,14 @@ export class App extends LitElement {
     }
     console.log(this.route, this.routeParams)
 
-    if (this.route === 'comment') {
-      this.doCommentRedirect()
-    }
-
     if (!this.user) {
       let st = await navigator.filesystem.stat('/profile')
       this.user = await (new Hyperdrive(st.mount.key)).getInfo()
       uwg.profiles.setUser(this.user)
       await uwg.profiles.readSocialGraph(this.user, this.user)
+    }
+    if (this.route === 'comment') {
+      await this.doCommentRedirect()
     }
     await this.requestUpdate()
     Array.from(this.shadowRoot.querySelectorAll('[loadable]'), el => el.load())
