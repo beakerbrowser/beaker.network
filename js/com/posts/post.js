@@ -79,7 +79,7 @@ export class Post extends LitElement {
     var postMeta = this.post.stat.metadata
     var viewProfileUrl = '/' + this.post.drive.url.slice('hd://'.length) // TODO
     var viewPostUrl = viewProfileUrl + '/posts/' + this.post.url.split('/').slice(-2).join('/')
-    var href = isLink ? postMeta.href : viewPostUrl
+    var href = isLink ? postMeta.href : this.post.url
     var userVote = this.getUserVote()
     var karma = this.getKarma()
     var author = this.post.drive
@@ -108,8 +108,8 @@ export class Post extends LitElement {
           ` : ''}
           <span class="domain">
             ${isLink ? html`<span class="fas fa-link"></span> ${toNiceDomain(postMeta.href)}` : ''}
-            ${isTextPost ? html`<span class="far fa-comment-alt"></span> text post` : ''}
-            ${isFile ? html`<span class="far fa-file"></span> file` : ''}
+            ${isTextPost ? html`<span class="far fa-comment-alt"></span> ${toNiceDomain(this.post.url)}` : ''}
+            ${isFile ? html`<span class="far fa-file"></span> ${toNiceDomain(this.post.url)}` : ''}
           </span>
           <button class="menu transparent" @click=${this.onClickMenu}><span class="fas fa-fw fa-ellipsis-h"></span></button>
         </div>
