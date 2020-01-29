@@ -22,31 +22,31 @@ ${tooltipCSS}
 
 .layout.left-col {
   display: grid;
-  grid-template-columns: 240px 1fr;
+  grid-template-columns: 240px minmax(0, 1fr);
   grid-gap: 10px;
 }
 
 .layout.right-col {
   display: grid;
-  grid-template-columns: 1fr 240px;
+  grid-template-columns: minmax(0, 1fr) 240px;
   grid-gap: 10px;
 }
 
 .layout.split-col {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   grid-gap: 10px;
 }
 
 .layout.three-col {
   display: grid;
-  grid-template-columns: 240px 1fr 240px;
+  grid-template-columns: 240px minmax(0, 1fr) 240px;
   grid-gap: 10px;
 }
 
 @media (max-width: 900px) {
   .layout.right-col {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
   .layout.right-col > :last-child {
     display: none;
@@ -55,7 +55,7 @@ ${tooltipCSS}
 
 @media (max-width: 1200px) {
   .layout.three-col {
-    grid-template-columns: 240px 1fr;
+    grid-template-columns: 240px minmax(0, 1fr);
   }
   .layout.three-col > :last-child {
     display: none;

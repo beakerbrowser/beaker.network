@@ -10,7 +10,7 @@ ${votectrlCSS}
 
 :host {
   display: grid;
-  grid-template-columns: 40px 1fr;
+  grid-template-columns: 40px minmax(0, 1fr);
   align-items: center;
   letter-spacing: 0.5px;
   font-size: 14px;
@@ -89,6 +89,38 @@ button.menu {
 
 .text-post-content a {
   color: var(--blue);
+}
+
+.text-post-content pre {
+  background: #f3f3f7;
+  padding: 1em;
+  overflow: auto;
+  max-width: 100%;
+}
+
+.text-post-content code {
+  background: #f3f3f7;
+  padding: 0 4px;
+}
+
+.text-post-content hr {
+  border: 0;
+  border-top: 1px solid #ccd;
+}
+
+.text-post-content p,
+.text-post-content ul,
+.text-post-content ol {
+  line-height: 1.5;
+}
+.text-post-content table {
+  margin: 1em 0;
+}
+.text-post-content blockquote {
+  border-left: 10px solid #f3f3f7;
+  margin: 1em 0;
+  padding: 1px 1.5em;
+  color: #667;
 }
 
 .file-content {
