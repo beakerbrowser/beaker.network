@@ -5,7 +5,7 @@ import '../com/profiles/aside.js'
 import '../com/posts/feed.js'
 import '../com/comments/feed.js'
 import '../com/profiles/list.js'
-import '../com/post-buttons.js'
+import '../com/search-input.js'
 import '../com/topics.js'
 
 export class ProfileView extends LitElement {
@@ -46,7 +46,7 @@ export class ProfileView extends LitElement {
       >${label}</a>
     `
     return html`
-      <div class="layout left-col">
+      <div class="layout three-col">
         <nav>
           <beaker-profile-aside loadable .user=${this.user} id=${this.profileId}></beaker-profile-aside>
         </nav>
@@ -59,6 +59,10 @@ export class ProfileView extends LitElement {
           </nav>
           ${this.renderSubview()}
         </main>
+        <nav>
+          <beaker-search-input placeholder="Search your network"></beaker-search-input>
+          <beaker-topics loadable></beaker-topics>
+        </nav>
       </div>
     `
   }

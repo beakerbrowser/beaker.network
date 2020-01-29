@@ -38,6 +38,12 @@ ${tooltipCSS}
   grid-gap: 10px;
 }
 
+.layout.three-col {
+  display: grid;
+  grid-template-columns: 240px 1fr 240px;
+  grid-gap: 10px;
+}
+
 @media (max-width: 900px) {
   .layout.right-col {
     grid-template-columns: 1fr;
@@ -47,10 +53,20 @@ ${tooltipCSS}
   }
 }
 
+@media (max-width: 1200px) {
+  .layout.three-col {
+    grid-template-columns: 240px 1fr;
+  }
+  .layout.three-col > :last-child {
+    display: none;
+  }
+}
+
 header {
   display: flex;
   align-items: center;
-  margin: 10px 6px 10px;
+  margin: 10px 6px;
+  height: 30px;
   letter-spacing: 0.75px;
 }
 
@@ -76,16 +92,24 @@ header a.highlighted {
 }
 
 header .brand {
-  position: relative;
-  padding-left: 20px;
+  font-size: 17px;
 }
 
-header .logo {
-  position: absolute;
-  top: 3px;
-  left: 0;
-  width: 16px;
-  height: 16px;
+header .compose-btn {
+  background: #4d84f3;
+  color: #fff;
+  border-radius: 20px;
+  font-size: 14px;
+  padding: 6px 12px;
+  font-weight: normal;
+  box-shadow: 0 1px 2px #0002;
+  border: 1px solid #1447ad;
+}
+
+
+header .compose-btn:hover {
+  color: #fff;
+  background: #3d74e3;
 }
 
 header .spacer {

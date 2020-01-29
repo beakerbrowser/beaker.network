@@ -1,6 +1,6 @@
 import { LitElement, html } from '../../vendor/lit-element/lit-element.js'
 import '../com/comments/feed.js'
-import '../com/post-buttons.js'
+import '../com/search-input.js'
 import '../com/topics.js'
 
 export class CommentsView extends LitElement {
@@ -32,7 +32,7 @@ export class CommentsView extends LitElement {
           <beaker-comments-feed loadable .user=${this.user}></beaker-comments-feed>
         </main>
         <nav>
-          <beaker-post-buttons></beaker-post-buttons>
+          <beaker-search-input placeholder="Search your network"></beaker-search-input>
           <beaker-topics loadable></beaker-topics>
         </nav>
       </div>

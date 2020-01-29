@@ -111,13 +111,11 @@ export class App extends LitElement {
       <link rel="stylesheet" href="/webfonts/fontawesome.css">
       <header>
         <a class="brand" href="/">
-          <img class="logo" src="/img/logo-16x16.png">
           <strong>Beaker.Network</a></strong>
         </a>
         <a href="/" title="Posts">Posts</a>
         <a href="/comments" title="Comments">Comments</a>
         <span class="spacer"></span>
-        <beaker-search-input placeholder="Search your network"></beaker-search-input>
         <a
           class=${classMap({highlighted: this.notificationCount > 0 })}
           href="/notifications"
@@ -143,6 +141,7 @@ export class App extends LitElement {
             ${this.user.title}
           </a>
         ` : ''}
+        <a class="compose-btn" href="/compose"><span class="fas fa-plus"></span> New Post</a>
       </header>
       ${this.renderView()}
     `

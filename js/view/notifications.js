@@ -1,7 +1,7 @@
 import { LitElement, html } from '../../vendor/lit-element/lit-element.js'
 import * as notificationsIndex from '../lib/notifications.js'
 import '../com/notifications/feed.js'
-import '../com/post-buttons.js'
+import '../com/search-input.js'
 import '../com/topics.js'
 
 export class NotificationsView extends LitElement {
@@ -36,7 +36,7 @@ export class NotificationsView extends LitElement {
           <beaker-notifications-feed loadable .user=${this.user}></beaker-notifications-feed>
         </main>
         <nav>
-          <beaker-post-buttons></beaker-post-buttons>
+          <beaker-search-input placeholder="Search your network"></beaker-search-input>
           <beaker-topics loadable></beaker-topics>
         </nav>
       </div>

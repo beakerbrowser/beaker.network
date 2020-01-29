@@ -1,7 +1,7 @@
 import { LitElement, html } from '../../vendor/lit-element/lit-element.js'
 import * as uwg from '../lib/uwg.js'
 import '../com/posts/composer.js'
-import '../com/post-buttons.js'
+import '../com/search-input.js'
 import '../com/topics.js'
 
 export class ComposeView extends LitElement {
@@ -33,7 +33,7 @@ export class ComposeView extends LitElement {
           <beaker-post-composer loadable></beaker-post-composer>
         </main>
         <nav>
-          <beaker-post-buttons></beaker-post-buttons>
+          <beaker-search-input placeholder="Search your network"></beaker-search-input>
           <beaker-topics loadable></beaker-topics>
         </nav>
       </div>

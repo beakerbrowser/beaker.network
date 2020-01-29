@@ -1,12 +1,10 @@
 import { LitElement, html } from '../../vendor/lit-element/lit-element.js'
-import { classMap } from '../../vendor/lit-element/lit-html/directives/class-map.js'
-import { repeat } from '../../vendor/lit-element/lit-html/directives/repeat.js'
 import * as uwg from '../lib/uwg.js'
 import * as toast from '../com/toast.js'
 import '../com/profiles/aside.js'
 import '../com/posts/post.js'
 import '../com/comments/thread.js'
-import '../com/post-buttons.js'
+import '../com/search-input.js'
 import '../com/topics.js'
 
 export class PostView extends LitElement {
@@ -121,7 +119,7 @@ export class PostView extends LitElement {
         </main>
         <aside>
           <beaker-profile-aside class="dark" loadable .user=${this.user} id=${this.author}></beaker-profile-aside>
-          <beaker-post-buttons></beaker-post-buttons>
+          <beaker-search-input placeholder="Search your network"></beaker-search-input>
           <beaker-topics loadable></beaker-topics>
         </aside>
       </div>

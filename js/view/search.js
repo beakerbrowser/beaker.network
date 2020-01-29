@@ -1,7 +1,7 @@
 import { LitElement, html } from '../../vendor/lit-element/lit-element.js'
 import { toNiceDriveType } from '../lib/strings.js'
 import '../com/search/results.js'
-import '../com/post-buttons.js'
+import '../com/search-input.js'
 import '../com/topics.js'
 
 export class SearchView extends LitElement {
@@ -39,7 +39,7 @@ export class SearchView extends LitElement {
           <beaker-search-results loadable .user=${this.user} drive-type=${this.driveType || ''} query=${this.query || ''}></beaker-search-results>
         </main>
         <nav>
-          <beaker-post-buttons></beaker-post-buttons>
+          <beaker-search-input placeholder="Search your network"></beaker-search-input>
           <beaker-topics loadable></beaker-topics>
         </nav>
       </div>

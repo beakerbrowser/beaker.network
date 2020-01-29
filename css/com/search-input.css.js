@@ -16,25 +16,8 @@ ${spinnerCSS}
 .search-container {
   position: relative;
   height: 36px;
-  width: 200px;
+  width: 240px;
   font-size: 13px;
-  transition: width .25s;
-}
-
-.search-container.active {
-  width: 400px;
-}
-
-@media (max-width: 1000px) {
-  .search-container.active {
-    width: 300px;
-  }
-}
-
-@media (max-width: 900px) {
-  .search-container.active {
-    width: 200px;
-  }
 }
 
 .spinner,
@@ -46,6 +29,7 @@ ${spinnerCSS}
 input.search {
   background: var(--input-bg-color);
   border-radius: var(--input-border-radius);
+  border: 0;
   left: 0;
   top: 0;
   width: 100%;
