@@ -6,7 +6,8 @@ export class PostButtons extends LitElement {
   static get properties () {
     return {
       page: {type: Number},
-      label: {type: String}
+      label: {type: String},
+      atEnd: {type: Boolean, attribute: 'at-end'}
     }
   }
 
@@ -18,6 +19,7 @@ export class PostButtons extends LitElement {
     super()
     this.page = 0
     this.label = ''
+    this.atEnd = false
   }
 
   render () {
@@ -25,7 +27,7 @@ export class PostButtons extends LitElement {
       <link rel="stylesheet" href="/webfonts/fontawesome.css">
       ${this.page > 0 ? html`<a href="#" @click=${this.onClickLeft}><span class="fas fa-fw fa-caret-left"></span></a>` : ''}
       <span class="label">${this.label || this.page}</span>
-      <a href="#" @click=${this.onClickRight}><span class="fas fa-fw fa-caret-right"></span></a>
+      ${!this.atEnd ? html`<a href="#" @click=${this.onClickRight}><span class="fas fa-fw fa-caret-right"></span></a>` : ''}
     `
   }
 

@@ -22,7 +22,7 @@ export class SearchInput extends LitElement {
     super()
     this.placeholder = ''
     this.isFocused = false
-    this.query = QP.getParam('query', undefined)
+    this.query = QP.getParam('q', undefined)
     this.results = undefined
     this.highlighted = 0
 
@@ -34,15 +34,22 @@ export class SearchInput extends LitElement {
   }
 
   generateResults () {
-    const title = (typeLabel) => `${!this.query ? 'List all' : 'Search'} ${typeLabel}${this.query ? ` for "${this.query}"` : ''}`
-    const url = (driveType) => `/search?drive-type=${encodeURIComponent(driveType)}&query=${encodeURIComponent(this.query)}`
-    this.results = [
-      {title: title('posts'), url: url('')},
-      {title: title('users'), url: url('user')},
-      {title: title('themes'), url: url('theme')},
-      {title: title('modules'), url: url('module')},
-      {title: title('webterm commands'), url: url('webterm.sh/cmd-pkg')}
-    ]
+    if (this.query) {
+      const title = (typeLabel) => `${!this.query ? 'List all' : 'Search'} ${typeLabel}${this.query ? ` for "${this.query}"` : ''}`
+      const url = (driveType) => `/search?drive-type=${encodeURIComponent(driveType)}&q=${encodeURIComponent(this.query)}`
+      this.results = [
+        {title: title('beaker.network'), url: url('')}
+      ]
+    } else {
+      this.results = undefined
+    }
+    // this.results = [
+    //   {title: title('posts'), url: url('')},
+    //   {title: title('users'), url: url('user')},
+    //   {title: title('themes'), url: url('theme')},
+    //   {title: title('modules'), url: url('module')},
+    //   {title: title('webterm commands'), url: url('webterm.sh/cmd-pkg')}
+    // ]
   }
 
   // rendering

@@ -203,14 +203,16 @@ export const posts = {
    * @param {number} [query.limit]
    * @param {Object} [opts]
    * @param {boolean} [opts.includeProfiles]
+   * @param {boolean} [opts.includeContent]
    * @returns {Promise<Post[]>}
    */
   async list (
     {topic, author, driveType, sort, reverse, offset, limit} = {topic: undefined, author: undefined, driveType: undefined, sort: undefined, reverse: undefined, offset: undefined, limit: undefined},
-    {includeProfiles} = {includeProfiles: false}
+    {includeProfiles, includeContent} = {includeProfiles: false, includeContent: true}
   ) {
     var drive = (author && author !== 'me') ? new Hyperdrive(author) : navigator.filesystem
-    var posts = await queryRead({
+    var queryFn = includeContent ? queryRead : (q, drive) => drive.query(q)
+    var posts = await queryFn({
       path: getPostsPaths(author, topic),
       metadata: driveType ? {'drive-type': driveType} : undefined,
       sort,
@@ -228,7 +230,7 @@ export const posts = {
           && isUrl(post.stat.metadata.href)
         )
       }
-      if (post.path.endsWith('.md') || post.path.endsWith('.txt')) {
+      if (includeContent && post.path.endsWith('.md') || post.path.endsWith('.txt')) {
         return isNonemptyString(post.content)
       }
       return true

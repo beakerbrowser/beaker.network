@@ -11,10 +11,40 @@ ${spinnerCSS}
   padding-right: 10px;
 }
 
-beaker-post {
-  border-top: 1px solid #dde;
-  padding: 16px 10px;
+a {
+  text-decoration: none;
+  color: #667;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.result {
+  padding: 10px 20px;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.result h4 {
   margin: 0;
+  font-size: 21px;
+  font-weight: normal;
+}
+
+.result .title {
+  color: var(--blue);
+}
+
+.result .author {
+  color: green;
+}
+
+beaker-paginator {
+  margin: 20px 10px;
+  padding-top: 20px;
+  border-top: 1px solid #dde;
 }
 `
 export default cssStr
