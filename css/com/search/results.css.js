@@ -33,6 +33,15 @@ a:hover {
   font-weight: normal;
 }
 
+.result h4 small {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.result h4 small a {
+  color: #889;
+}
+
 .result .title {
   color: var(--blue);
 }

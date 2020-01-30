@@ -133,7 +133,10 @@ export class SearchResults extends LitElement {
               let votes = result.postMeta.votes
               return html`
                 <div class="result">
-                  <h4><a class="title" href=${result.url}>${facetize(result.title, queryRe, this.query)}</a></h4>
+                  <h4>
+                    <a class="title" href=${result.url}>${facetize(result.title, queryRe, this.query)}</a>
+                    <small><a href=${result.url}>${toNiceUrl(result.url)}</a></small>
+                  </h4>
                   <div class="details">
                     by <a class="author" href=${viewProfileUrl} title=${result.postMeta.author.title}>${result.postMeta.author.title}</a>
                     | <a class="topic" title=${toNiceTopic(result.postMeta.topic)} href="/?topic=${encodeURIComponent(result.postMeta.topic)}">${toNiceTopic(result.postMeta.topic)}</a>
@@ -154,7 +157,10 @@ export class SearchResults extends LitElement {
             if (result.type === 'user') {
               return html`
                 <div class="result">
-                  <h4><a class="title" href=${viewUrl}>${facetize(result.title, queryRe, this.query)}</a> <small><a href=${result.url}>${toNiceUrl(result.url)}</a></small></h4>
+                  <h4>
+                    <a class="title" href=${viewUrl}>${facetize(result.title, queryRe, this.query)}</a>
+                    <small><a href=${result.url}>${toNiceUrl(result.url)}</a></small>
+                  </h4>
                   <div class="description">${facetize(result.userMeta.description, queryRe, this.query)}</div>
                   <div class="followers">
                     Followed by
